@@ -2,26 +2,18 @@
 
 import React, { useState } from "react";
 import ListItem from "./ListItem";
+import Link from "next/link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <header className={`absolute left-0 top-0 z-20 flex w-full items-center`}>
-      <div className="container">
+      <div className="container px-12">
         <div className="relative -mx-4 flex items-center justify-between">
-          <div className="w-60 max-w-full px-4">
-            <a href="/#" className="block w-full py-5">
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo.svg"
-                alt="logo"
-                className="w-full dark:hidden"
-              />
-              <img
-                src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo-white.svg"
-                alt="logo"
-                className="w-full hidden dark:block"
-              />
-            </a>
+          <div className="w-60 max-w-full px-4 dark:bg-white">
+            <Link href="/#" className="block w-full py-5">
+              <p className="color-white">Logo</p>
+            </Link>
           </div>
           <div className="flex w-full items-center justify-between px-4">
             <div>
