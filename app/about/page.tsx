@@ -1,6 +1,6 @@
 import React from "react";
 
-const About1 = () => {
+const About = () => {
   return (
     <>
       <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
@@ -639,4 +639,4 @@ const About1 = () => {
   );
 };
 
-export default About1;
+export default About;

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 
 type Props = {
@@ -11,12 +12,12 @@ const ListItem = (props: Props) => {
   return (
     <>
       <li>
-        <a
+        <Link
           href={NavLink}
           className="flex py-2 text-base font-medium text-dark hover:text-primary dark:text-white lg:ml-10 lg:inline-flex"
         >
           {children}
-        </a>
+        </Link>
       </li>
     </>
   );
