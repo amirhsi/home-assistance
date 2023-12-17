@@ -1,4 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { withContentlayer } = require("next-contentlayer");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "2mb",
+    },
+  },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "hajibadoomi.com",
+      },
+    ],
+  },
+};
+
+module.exports = withContentlayer(nextConfig);

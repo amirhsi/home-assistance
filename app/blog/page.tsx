@@ -1,7 +1,9 @@
 import React from "react";
 import BlogCard from "../../components/Blog/BlogCard";
+import { allBlogs, Blog } from "contentlayer/generated";
+import Link from "next/link";
 
-const Blog = () => {
+const BlogSection = () => {
   return (
     <>
       <section className="bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
@@ -23,28 +25,23 @@ const Blog = () => {
         </div>
 
         <div className="mx-24 flex flex-wrap">
-          <BlogCard
-            date="Dec 22, 2023"
-            CardTitle="Meet AutoManage, the best AI management tools"
-            CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            image="https://i.ibb.co/Cnwd4q6/image-01.jpg"
-          />
-          <BlogCard
-            date="Dec 22, 2023"
-            CardTitle="Meet AutoManage, the best AI management tools"
-            CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            image="https://i.ibb.co/Y23YC07/image-02.jpg"
-          />
-          <BlogCard
-            date="Dec 22, 2023"
-            CardTitle="Meet AutoManage, the best AI management tools"
-            CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            image="https://i.ibb.co/7jdcnwn/image-03.jpg"
-          />
+          {allBlogs.slice(0, 4).map((blog: Blog, index: number) => (
+            <Link href={`/blog/details/${blog.slug}`}>
+              <div>
+                <BlogCard
+                  key={index}
+                  date={blog.publishedDate}
+                  CardTitle={blog.title}
+                  CardDescription={blog.description}
+                  image={blog.image}
+                />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
     </>
   );
 };
 
-export default Blog;
+export default BlogSection;
