@@ -14,7 +14,7 @@ const ListItem = (props: Props) => {
       <li>
         <Link
           href={NavLink}
-          className="flex py-2 text-base font-medium text-dark hover:text-primary dark:text-black lg:ml-10 lg:inline-flex"
+          className="flex text-white py-2 text-base font-medium text-dark hover:text-primary lg:ml-10 lg:inline-flex"
         >
           {children}
         </Link>

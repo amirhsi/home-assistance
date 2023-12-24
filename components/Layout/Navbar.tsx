@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem";
 import Link from "next/link";
+import theme from "@/theme";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -13,8 +14,8 @@ const Navbar = () => {
       className={`absolute left-0 top-0 z-20 flex w-full mt-5`}
     >
       <div
-        style={{ borderRadius: 12 }}
-        className="container px-12 bg-slate-400"
+        style={{ borderRadius: 12, backgroundColor: theme.colors.color1 }}
+        className="container px-12"
       >
         <div className="relative -mx-4 flex items-center justify-between">
           <div className="w-60 max-w-full px-4 ">
@@ -41,9 +42,9 @@ const Navbar = () => {
               } `}
             >
               <ul className="lg:flex">
-                <ListItem NavLink="/">Home</ListItem>
-                <ListItem NavLink="/about">About</ListItem>
-                <ListItem NavLink="/blog">Blog</ListItem>
+                <ListItem NavLink="/about">درباره ما</ListItem>
+                <ListItem NavLink="/blog">بلاگ</ListItem>
+                <ListItem NavLink="/">خانه</ListItem>
               </ul>
             </nav>
           </div>
